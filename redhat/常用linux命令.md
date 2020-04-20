@@ -142,12 +142,12 @@ D(不可中断)|进程不响应系统异步信号,即便用 kill 命令也不能
 Z(僵死)|进程已经终止,但进程描述依旧存在,知道父进程调用 wait4()系统函数后将进程释放
 T(停止)|进程收到停止信号后停止运行
 
-![images](images/进程状态.png)
+![images](images/course-status.png)
 
 ###### 7. top 命令
 
 top 命令用于动态地监视进程活动与系统负载等信息，其格式为 top。
-![top命令](images/top命令.png)  
+![top命令](images/top.png)  
 top 命令结果的前 5 行为系统整体的同级信息:
 
 1. 系统时间、运行时间、登录终端数、系统负载（三个数值分别为 1 分钟、5 分钟、15 分钟内的平均值，数值越小意味着负载越低）。
@@ -186,7 +186,7 @@ killall httpd
 ###### 1. ifconfig 命令
 
 ifconfig 命令用于获取网卡配置与网络状态等信息，格式为“ifconfig [网络设备][参数]” 。
-![ifconfig](images/ifconfig命令.png)  
+![ifconfig](images/ifconfig.png)  
 eno16777728: 网卡名称
 inet 192.168.10.10 是 ip 地址
 ether 后面是物理网卡地址(MAC 地址)  
@@ -196,7 +196,7 @@ TX 为发送数据包的个数及累计流量
 ###### 2. uname 命令
 
 uname 命令用于查看系统内核与系统版本等信息，格式为“uname [-a]”。
-![uname](images/uname命令.png)  
+![uname](images/uname.png)  
 分别对应当前系统的内核名称、主 机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统 名称
 
 ```
@@ -212,12 +212,12 @@ uptime 用于查看系统的负载信息，格式为 uptime
 ###### 4. free 命令
 
 free 用于显示当前系统中内存的使用量信息，格式为“free [-h]”。
-![free](images/free命令.png)
+![free](images/free.png)
 
 ###### 5. who 命令
 
 who 用于查看当前登入主机的用户终端信息，格式为“who [参数]”。
-![who](images/who命令.png)
+![who](images/who.png)
 
 ###### 6. last 命令
 
