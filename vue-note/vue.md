@@ -179,3 +179,84 @@ data: { styleObject: { color: 'red', fontSize: '13px' } }
 ```html
 <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
+
+## 条件渲染
+
+v-if 当值为真值时渲染内容,v-else-if 必须紧跟在 v-if 后面,v-else 必须紧跟在 v-if 或 v-else-if 后面  
+v-if 可用在 template 上来分组切换  
+key 值可以确保元素是独立的,不需要复用  
+v-show 只是切换 display 属性
+
+## 列表渲染
+
+v-for 需要用`item in items`语法,item 是当前值的别名,items 是源数据
+
+#### 在 v-for 中使用对象
+
+```
+v-for="(value,key,index) in object"
+```
+
+###### 变更方法
+
+变更方法会变更调用了这些方法的原始数组,会触发视图更新:push,pop,shift,unshift,splice,reverse,sort
+
+非变更方法想要修改原数组就要重新对其赋值
+
+## 事件处理
+
+在 vue 中调用内联 js 方法是可以传\$event 来获取事件对象
+
+```
+<button @click="say('hi',$event)></button>
+say(msg,event){
+  ...
+}
+```
+
+#### 事件修饰符
+
+- stop
+- prevent
+- capture
+- self
+- once
+- passive: 在滚动结束后才会触发事件,相当于 lazy
+
+#### 按键修饰符
+
+在监听键盘事件时指定特定的按键
+
+- .enter
+- .tab
+- .delete
+- .esc
+- .space
+- .up
+- .down
+- .left
+- .right
+
+自定义按键修饰符别名`Vue.config.keyCodes.f1 = 112`
+
+#### 系统修饰键
+
+- .ctrl
+- .alt
+- .shift
+- .meta
+
+.exact 能精确控制系统修饰符组合触发的事件
+
+```html
+<!-- 有且只有ctrl被按下才能触发 -->
+<button v-on:click.ctrl="onclick"></button>
+<!-- 没有任何系统修饰符被按下才能触发 -->
+<button v-on:click.exact="onclick"></button>
+```
+
+鼠标按键修饰符:
+
+- .left
+- .right
+- .middle

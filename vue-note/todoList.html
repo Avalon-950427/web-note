@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      ul {
+        padding: 0;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        width: 200px;
+        height: 20px;
+        margin: 0;
+        border: 1px solid;
+      }
+      span {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 90%;
+      }
+      i {
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="msg" @keyup.enter.lazy="publish" />
+      <ul>
+        <li v-for="(item,index) in todoList">
+          <span>{{item}}</span>
+          <i @click="del(index)">x</i>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="node_modules\vue\dist\vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '',
+        todoList: [],
+      },
+      methods: {
+        publish() {
+          this.todoList.push(this.msg);
+        },
+
+        del(index) {
+          this.todoList.splice(index, 1);
+        },
+      },
+    });
+  </script>
+</html>
