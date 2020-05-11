@@ -124,10 +124,34 @@ Console步骤:
 
 ## 流程控制
 
+#### 块级作用域
+
+块确定了变量的作用域,不能在嵌套的两个块中声明同名的变量
+
 #### 分支结构
 if语句
 ```java
 if(比较表达式){
     语句体;
+}else if(比较表达式2){
+    语句体2;
+}else{
+    语句体3;
 }
 ```
+
+switch语句
+```java
+switch(表达式):
+    case 值1:
+        语句体;
+        break;
+    case 值2:
+        语句体;
+        break;
+    default:
+        语句体;
+        break;
+```
+表达式的取值:byte,short,int,char,枚举,String  
+case后面的值只能是常量,不能是变量   

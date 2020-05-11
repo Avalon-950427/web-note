@@ -260,3 +260,29 @@ say(msg,event){
 - .left
 - .right
 - .middle
+
+## 表单输入绑定
+
+v-model: 在 input,textarea,select 元素上创建双向数据绑定,会忽略表单元素的 value,checked,selected 属性初始值
+
+```
+//当只有一个复选框的时候,v-model会把绑定值转换为true或false
+<input type="checkbox" v-model="a" />
+data:{
+  a: 0
+}
+//当有多个复选框时,需要增加value属性,且绑定值的数据类型为数组
+<input type="checkbox" value="zcw" v-model="names" />
+<input type="checkbox" value="ll" v-model="names" />
+data: {
+  names: []
+}
+```
+
+```
+<input type="radio" value="one" v-model="picked" />
+<input type="radio" value="two" v-model="picked" />
+data: {
+  picked: ''
+}
+```

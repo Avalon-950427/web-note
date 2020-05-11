@@ -112,7 +112,26 @@ a = a^b;
 
 ## 输入与输出
 #### 读取输入
-步骤: 
+Scanner步骤: 
 1. 导包`import java.util.Scanner`
 2. 创建键盘录入对象`Scanner sc = new Scanner(System.in)`
 3. 通过对象读取数据`int x = sc.nextInt()`
+
+Console步骤:
+1. 导包`import java.io.Console;`
+2. 创建Console对象`Console con = System.console();`
+3. 读取数据`char[] passws = con.readPassword("password:")`
+
+## 流程控制
+
+#### 分支结构
+if语句
+```java
+if(比较表达式){
+    语句体;
+}else if(比较表达式2){
+    语句体2;
+}else{
+    语句体3;
+}
+```

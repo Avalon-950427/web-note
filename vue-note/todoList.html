@@ -37,6 +37,8 @@
           <i @click="del(index)">x</i>
         </li>
       </ul>
+      <input type="radio" value="one" v-model="picked" />
+      <input type="radio" value="two" v-model="picked" />{{picked}}
     </div>
   </body>
   <script src="node_modules\vue\dist\vue.js"></script>
@@ -46,6 +48,7 @@
       data: {
         msg: '',
         todoList: [],
+        picked: '',
       },
       methods: {
         publish() {

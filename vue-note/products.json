@@ -1,0 +1,18 @@
+[
+  {
+    "isSelected": true,
+    "productCover": "https://pic4.zhimg.com/v2-78178c40350be73557cb9117deadde27_b.jpg",
+    "productName": "faker",
+    "productInfo": "深入浅出的Node.js",
+    "productPrice": 57.8,
+    "productCount": 3
+  },
+  {
+    "isSelected": true,
+    "productCover": "https://pic4.zhimg.com/v2-78178c40350be73557cb9117deadde27_b.jpg",
+    "productName": "faker",
+    "productInfo": "深入浅出的Node.js",
+    "productPrice": 57.8,
+    "productCount": 3
+  }
+]
