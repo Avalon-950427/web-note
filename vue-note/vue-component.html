@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div :style="{fontSize: fontSize + 'px'}">
+        <blog-post
+          v-for="(blog,index) in blogs"
+          :key="index"
+          :title="blog"
+          @enlarge="enlarge"
+        ></blog-post>
+      </div>
+    </div>
+  </body>
+  <script src="node_modules\vue\dist\vue.js"></script>
+  <script>
+    Vue.component('blog-post', {
+      props: ['title'],
+      template: `
+        <div class="blog-post">
+          <h3>{{title}}</h3>
+          <button @click="$emit('enlarge',1,2)">enlarge button</button>
+        </div>
+      `,
+    });
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        blogs: ['js', 'css', 'vue'],
+        fontSize: 16,
+      },
+      methods: {
+        enlarge(num, num2) {
+          console.log(num, num2);
+          this.fontSize += num;
+        },
+      },
+    });
+  </script>
+</html>

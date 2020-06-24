@@ -51,3 +51,46 @@ Vue.component('blog-post',{
   template: '<h3>{{title}}</h3>'
 })
 ```
+
+**组件模板的根元素有且只有一个**
+
+#### 监听子组件事件
+
+子组件可以通过`$emit(事件名)`来触发父组件上的同名事件,子组件触发事件时抛出的值保存在\$event 中(在行内写事件)
+
+```
+<blog-post title="zzz" v-on:post="console.log($event)"></blog-post>
+Vue.component('blog-post',{
+  props: ['title'],
+  template: '<h3 @click="$emit(post,1)">{{title}}</h3>'
+})
+```
+
+#### 在组件上使用 v-model
+
+```
+<input v-model="searchText">
+```
+
+等价于:
+
+```
+<input
+  v-bind:value="searchText"
+  v-on:input="searchText = $event.target.value"
+>
+```
+
+```
+<custom-input
+  v-bind:value="searchText"
+  v-on:input="searchText = $event"
+></custom-input>
+等价于
+<custom-input v-model="searchText"></custom-input>
+
+Vue.component('custom-input',{
+  props:['value'],
+  v-on:input="$emit('input',$event.target.value)
+})
+```

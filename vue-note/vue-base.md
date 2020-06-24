@@ -63,7 +63,6 @@ v-html 可将数据解释为 html 代码
 { { ok ? 'yes' : 'no' } }
 
 <div v-bind:id="'list'+id"></div>
-;
 ```
 
 #### 指令

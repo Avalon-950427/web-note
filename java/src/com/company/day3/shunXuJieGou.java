@@ -14,6 +14,17 @@ public class shunXuJieGou {
             x =7;
         }
         System.out.println("x="+x+",y="+y);
+//        System.out.println(10+=1);
 
+        boolean b = true;
+
+        if(b==false)
+            System.out.println("a");
+        else if(b)
+            System.out.println("b");
+        else if(!b)
+            System.out.println("c");
+        else
+            System.out.println("d");
     }
 }
